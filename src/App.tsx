@@ -10,7 +10,6 @@ import { AnimatePresence } from "framer-motion";
 
 // Importar as fotos dos assets
 import afilhado1 from "./assets/afilhado1.jpg";
-import afilhado2 from "./assets/afilhado2.jpg";
 import darahPhoto from "./assets/darah.jpg";
 import cabeloMamae from "./assets/cabelo-mamae.jpg";
 import cabeloMamaeDepois from "./assets/cabelo-mamae-depois.jpg";
@@ -19,7 +18,6 @@ const curiosidades = [
   { text: "Tenho de medo de viver uma vida repleta de dias iguais, onde a gente só trabalha e paga boleto", emoji: "🥴" },
   { text: "Sou mãe de pet Darah", emoji: "🐾", foto: darahPhoto, fotoSize: "large" as const },
   { text: "Sou madrinha do Arthur e do João Gabriel", emoji: "👶", foto: afilhado1, fotoSize: "medium" as const },
-  { text: "Estou vivendo um processo de apadrinhamento afetivo", emoji: "💛", foto: afilhado2, fotoSize: "small" as const },
   { text: "Eu virei a cabeleireira da minha cabeleireira", emoji: "💇‍♀️", fotos: [cabeloMamae, cabeloMamaeDepois], fotoSize: "small" as const }
 ];
 
@@ -31,7 +29,7 @@ const sonhos = [
 ];
 
 const desafios = [
-  { text: "Melhorar meu inglês", emoji: "🌎" },
+  { text: "Me dedicar ao inglês", emoji: "🌎" },
   { text: "Manter uma rotina de exercícios (mesmo odiando academia)", emoji: "😅" },
   { text: "Vencer o cesto infinito de roupas para lavar", emoji: "👕" },
   { text: "Diminuir a fofoca", emoji: "🤭" },
