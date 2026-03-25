@@ -20,7 +20,7 @@ const curiosidades = [
   { text: "Sou mãe de pet Darah", emoji: "🐾", foto: darahPhoto, fotoSize: "large" as const },
   { text: "Sou madrinha do Arthur e do João Gabriel", emoji: "👶", foto: afilhado1, fotoSize: "medium" as const },
   { text: "Estou vivendo um processo de apadrinhamento afetivo", emoji: "💛", foto: afilhado2, fotoSize: "small" as const },
-  { text: "Eu sou virei a cabeleireira da minha cabeleireira", emoji: "💇‍♀️", fotos: [cabeloMamae, cabeloMamaeDepois], fotoSize: "small" as const }
+  { text: "Eu virei a cabeleireira da minha cabeleireira", emoji: "💇‍♀️", fotos: [cabeloMamae, cabeloMamaeDepois], fotoSize: "small" as const }
 ];
 
 const sonhos = [
