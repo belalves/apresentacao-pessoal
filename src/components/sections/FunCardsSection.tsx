@@ -6,6 +6,7 @@ interface FunCardItem {
   text: string;
   emoji: string;
   foto?: string;
+  fotos?: string[]; // Para múltiplas fotos
   fotoSize?: "small" | "medium" | "large";
 }
 
@@ -92,7 +93,33 @@ const FunCardsSection = ({ title, items, accentColor }: FunCardsSectionProps) =>
             }}
           >
             <div className="flex flex-col items-center justify-center text-center gap-4 h-full relative">
-              {item.foto ? (
+              {item.fotos ? (
+                // Múltiplas fotos - layout lado a lado
+                <div className="flex gap-2">
+                  {item.fotos.map((foto, index) => (
+                    <div key={index} className="relative">
+                      <img
+                        src={foto}
+                        alt={`${item.text} - ${index + 1}`}
+                        className={`rounded-lg object-cover transition-transform group-hover:scale-105 cursor-pointer ${
+                          item.fotoSize === "large" 
+                            ? "w-10 h-10" 
+                            : item.fotoSize === "medium" 
+                            ? "w-8 h-8" 
+                            : "w-6 h-6"
+                        }`}
+                        onClick={() => setSelectedPhoto({ src: foto, alt: `${item.text} - Foto ${index + 1}` })}
+                      />
+                      {index === 0 && (
+                        <span className="absolute -top-1 -right-1 text-xs">
+                          {item.emoji}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : item.foto ? (
+                // Foto única
                 <div className="relative">
                   <img
                     src={item.foto}
@@ -111,6 +138,7 @@ const FunCardsSection = ({ title, items, accentColor }: FunCardsSectionProps) =>
                   </span>
                 </div>
               ) : (
+                // Apenas emoji
                 <span className="text-4xl group-hover:scale-110 transition-transform flex-shrink-0">
                   {item.emoji}
                 </span>
