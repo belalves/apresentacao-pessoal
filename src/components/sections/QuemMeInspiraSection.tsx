@@ -20,7 +20,7 @@ const inspiracoesData: Inspiracao[] = [
     foto: paisPhoto
   },
   {
-    nome: "Na área: Paula Cristine",
+    nome: "Na área: Paula Cristiane",
     descricao: "Na epoca em que passei pela MAG ela foi nossa arquiteta, ela era capaz de impor respeito com apenas um olhar, uma mulher incrivel e que sempre compartilhava seu conhecimento.",
     frase: "",
     emoji: "👩‍💻"

@@ -14,7 +14,7 @@ import afilhado2 from "./assets/afilhado2.jpg";
 import darahPhoto from "./assets/darah.jpg";
 
 const curiosidades = [
-  { text: "Sou mãe de plantas", emoji: "🌱" },
+  { text: "Tenho de medo de viver uma vida repleta de dias iguais, onde a gente só trabalha e paga boleto", emoji: "🥴" },
   { text: "Sou mãe de pet Darah", emoji: "🐾", foto: darahPhoto, fotoSize: "large" as const },
   { text: "Sou madrinha do Arthur e do João Gabriel", emoji: "👶", foto: afilhado1, fotoSize: "medium" as const },
   { text: "Estou vivendo um processo de apadrinhamento afetivo", emoji: "💛", foto: afilhado2, fotoSize: "small" as const },
