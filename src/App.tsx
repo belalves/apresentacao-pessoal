@@ -11,7 +11,7 @@ import { AnimatePresence } from "framer-motion";
 // Importar as fotos dos assets
 import afilhado1 from "./assets/afilhado1.jpg";
 import afilhado2 from "./assets/afilhado2.jpg";
-import darahPhoto from "./assets/darah.jpeg";
+import darahPhoto from "./assets/darah.jpg";
 
 const curiosidades = [
   { text: "Sou mãe de plantas", emoji: "🌱" },
