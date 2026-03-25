@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 220 20% 90%;
+
+    --card: 222 40% 8%;
+    --card-foreground: 220 20% 90%;
+
+    --popover: 222 40% 8%;
+    --popover-foreground: 220 20% 90%;
+
+    --primary: 170 60% 50%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 230 25% 18%;
+    --secondary-foreground: 220 20% 85%;
+
+    --muted: 225 20% 14%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 280 50% 60%;
+    --accent-foreground: 220 20% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 225 20% 16%;
+    --input: 225 20% 16%;
+    --ring: 170 60% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 225 50% 4%;
+    --sidebar-foreground: 220 15% 55%;
+    --sidebar-primary: 170 60% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 225 25% 12%;
+    --sidebar-accent-foreground: 220 20% 90%;
+    --sidebar-border: 225 20% 12%;
+    --sidebar-ring: 170 60% 50%;
+
+    /* Custom tokens */
+    --highlight: 45 90% 60%;
+    --gradient-hero: linear-gradient(135deg, hsl(170 60% 50% / 0.15), hsl(280 50% 60% / 0.1));
+    --gradient-card: linear-gradient(145deg, hsl(225 25% 12%), hsl(222 40% 8%));
+    --shadow-glow: 0 0 30px hsl(170 60% 50% / 0.1);
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+/* Mosaic fun layout */
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  grid-auto-rows: minmax(140px, auto);
+}
+
+.mosaic-item {
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Para telas menores, usar layout responsivo */
+@media (max-width: 768px) {
+  .mosaic-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .mosaic-item {
+    min-height: 120px;
+  }
+}
+
+/* Para telas médias, 2 colunas */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mosaic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Efeito especial para as fotos nos cards */
+.mosaic-item img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.mosaic-item:hover img {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.mosaic-grid .mosaic-item:nth-child(7) {
+  grid-column: span 2;
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
