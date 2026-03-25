@@ -21,10 +21,10 @@ const menuItems = [
   { id: "historia", label: "História", icon: BookOpen },
   { id: "formacao", label: "Formação", icon: GraduationCap },
   { id: "carreira", label: "Carreira", icon: Briefcase },
-  { id: "inspira", label: "Quem Me Inspira", icon: Users },
   { id: "curiosidades", label: "Curiosidades", icon: Sparkles },
   { id: "desafios", label: "Desafios", icon: Target },
   { id: "sonhos", label: "Sonhos", icon: Heart },  
+  { id: "inspira", label: "Quem Me Inspira", icon: Users },
 ];
 
 const Sidebar = ({ activeSection, visitedSections, onNavigate }: SidebarProps) => {

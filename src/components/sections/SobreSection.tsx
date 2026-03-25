@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { MapPin, Mail } from "lucide-react";
 import mortaImg from "../../assets/morta.jpg";
 
 const SobreSection = () => {

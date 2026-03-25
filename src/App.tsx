@@ -23,7 +23,6 @@ const curiosidades = [
 const sonhos = [
   { text: "Abrir uma pousada com café da manhã 5 estrelas", emoji: "☕" },
   { text: "Ter uma velhice confortável", emoji: "🏡" },
-  { text: "Tirar um ano sabático", emoji: "✈️" },
   { text: "Aprender a dançar charme", emoji: "💃" },
   { text: "Viajar pelo mundo", emoji: "🌍" },
 ];
