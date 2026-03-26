@@ -68,7 +68,7 @@ const Index = () => {
         visitedSections={visited}
         onNavigate={navigate}
       />
-      <main className="ml-64 flex-1 py-16 px-8 md:px-16 max-w-3xl">
+      <main className="w-full md:ml-64 flex-1 py-8 md:py-16 px-4 pt-16 md:pt-8 md:px-8 lg:px-16 max-w-4xl">
         <AnimatePresence mode="wait">
           <div key={activeSection}>
             {renderSection()}

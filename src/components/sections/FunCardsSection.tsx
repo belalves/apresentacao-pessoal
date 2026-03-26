@@ -38,7 +38,7 @@ const PhotoModal = ({ isOpen, onClose, photoSrc, photoAlt }: {
         onClick={onClose}
       >
         <motion.div
-          className="relative max-w-4xl max-h-[80vh]"
+          className="relative max-w-4xl max-h-[80vh] w-full"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.5, opacity: 0 }}
@@ -51,7 +51,7 @@ const PhotoModal = ({ isOpen, onClose, photoSrc, photoAlt }: {
           />
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-8 h-8 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
+            className="absolute top-2 right-2 md:top-4 md:right-4 w-8 h-8 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
           >
             <X className="w-4 h-4 text-white" />
           </button>
@@ -71,7 +71,7 @@ const FunCardsSection = ({ title, items, accentColor }: FunCardsSectionProps) =>
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-3xl font-display font-bold text-foreground mb-2">
+      <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2">
         {title}
       </h2>
       <div 
@@ -83,7 +83,7 @@ const FunCardsSection = ({ title, items, accentColor }: FunCardsSectionProps) =>
         {items.map((item, i) => (
           <motion.div
             key={i}
-            className="mosaic-item bg-card border border-border rounded-xl p-6 hover:border-opacity-50 transition-all group overflow-hidden"
+            className="mosaic-item bg-card border border-border rounded-xl p-4 md:p-6 hover:border-opacity-50 transition-all group overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: i * 0.1 }}
@@ -92,10 +92,10 @@ const FunCardsSection = ({ title, items, accentColor }: FunCardsSectionProps) =>
               borderColor: color,
             }}
           >
-            <div className="flex flex-col items-center justify-center text-center gap-4 h-full relative">
+            <div className="flex flex-col items-center justify-center text-center gap-3 md:gap-4 h-full relative">
               {item.fotos ? (
-                // Múltiplas fotos - layout lado a lado
-                <div className="flex gap-2">
+                // Múltiplas fotos - layout responsivo
+                <div className="flex flex-col sm:flex-row gap-2">
                   {item.fotos.map((foto, index) => (
                     <div key={index} className="relative">
                       <img
@@ -103,15 +103,15 @@ const FunCardsSection = ({ title, items, accentColor }: FunCardsSectionProps) =>
                         alt={`${item.text} - ${index + 1}`}
                         className={`rounded-lg object-cover transition-transform group-hover:scale-105 cursor-pointer ${
                           item.fotoSize === "large" 
-                            ? "w-10 h-10" 
+                            ? "w-12 h-12 md:w-16 md:h-16" 
                             : item.fotoSize === "medium" 
-                            ? "w-8 h-8" 
-                            : "w-6 h-6"
+                            ? "w-10 h-10 md:w-12 md:h-12" 
+                            : "w-8 h-8 md:w-10 md:h-10"
                         }`}
                         onClick={() => setSelectedPhoto({ src: foto, alt: `${item.text} - Foto ${index + 1}` })}
                       />
                       {index === 0 && (
-                        <span className="absolute -top-1 -right-1 text-xs">
+                        <span className="absolute -top-1 -right-1 text-xs md:text-sm">
                           {item.emoji}
                         </span>
                       )}
@@ -126,24 +126,24 @@ const FunCardsSection = ({ title, items, accentColor }: FunCardsSectionProps) =>
                     alt={item.text}
                     className={`rounded-lg object-cover transition-transform group-hover:scale-105 cursor-pointer ${
                       item.fotoSize === "large" 
-                        ? "w-20 h-20" 
+                        ? "w-16 h-16 md:w-20 md:h-20" 
                         : item.fotoSize === "medium" 
-                        ? "w-16 h-16" 
-                        : "w-12 h-12"
+                        ? "w-12 h-12 md:w-16 md:h-16" 
+                        : "w-10 h-10 md:w-12 md:h-12"
                     }`}
                     onClick={() => setSelectedPhoto({ src: item.foto!, alt: item.text })}
                   />
-                  <span className="absolute -top-2 -right-2 text-2xl">
+                  <span className="absolute -top-2 -right-2 text-xl md:text-2xl">
                     {item.emoji}
                   </span>
                 </div>
               ) : (
                 // Apenas emoji
-                <span className="text-4xl group-hover:scale-110 transition-transform flex-shrink-0">
+                <span className="text-3xl md:text-4xl group-hover:scale-110 transition-transform flex-shrink-0">
                   {item.emoji}
                 </span>
               )}
-              <p className="text-sm text-foreground leading-relaxed flex-1 flex items-center">
+              <p className="text-xs md:text-sm text-foreground leading-relaxed flex-1 flex items-center">
                 {item.text}
               </p>
             </div>

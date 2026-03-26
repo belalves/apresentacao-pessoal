@@ -85,35 +85,50 @@
 /* Mosaic fun layout */
 .mosaic-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  grid-auto-rows: minmax(140px, auto);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  grid-auto-rows: minmax(120px, auto);
 }
 
 .mosaic-item {
-  min-height: 140px;
+  min-height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* Para telas menores, usar layout responsivo */
-@media (max-width: 768px) {
+/* Para telas muito pequenas (mobile) */
+@media (max-width: 640px) {
   .mosaic-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 8px;
+    grid-auto-rows: minmax(100px, auto);
   }
   
   .mosaic-item {
-    min-height: 120px;
+    min-height: 100px;
+    padding: 12px !important;
   }
 }
 
-/* Para telas médias, 2 colunas */
+/* Para telas pequenas (tablet portrait) */
+@media (min-width: 640px) and (max-width: 768px) {
+  .mosaic-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .mosaic-item {
+    min-height: 110px;
+  }
+}
+
+/* Para telas médias (tablet landscape) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .mosaic-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 }
 
